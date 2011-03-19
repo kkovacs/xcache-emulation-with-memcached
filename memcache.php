@@ -48,7 +48,7 @@ if (!function_exists('xcache_get')) {
 	function xcache_unset($id) {
 		global $memcache_object;
 		if (cache_connect()) {
-			return $memcache_object->delete($id);
+			return $memcache_object->delete($id, 0);
 		} else {
 			return false;
 		}
